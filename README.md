@@ -1,18 +1,61 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/y46p6FV3)
-EE2DID-practical The primary aim of these practical sessions is to enable you to design and implement a more complex digital circuit using VHDL. You will do this by implementing and testing separate components as you go along and then combining them at the end to produce a finished complete working system. As you go through the individual exercises the amount of additional hints and support provided here decreases and you will be expected to be able to find things out for yourself.
+FPGA Traffic Light Controller (VHDL)
+*Overview
 
-As part of this process your will gain familiarity with:
+This project implements a traffic light control system on an FPGA using VHDL.
+It demonstrates modular RTL design, finite state machines (FSMs), and hardware verification workflows.
 
-the Linux command line interface; using a text editor to edit and save your source files; the VHDL tool chain; using |make| to automate the build process; Using git and github for version control; writing test-benches and using simulations to test your digital designs; using synthesis tools to generate bit files to program FPGAs. You will be using the Linux operating system and a command line interface (CLI) based tool chain (together with the Visual Studio Code text editor) to develop, test and synthesise
+The system was designed, simulated, and deployed on a Basys 3 (Artix-7 FPGA).
 
-Many of these skills are transferable to writing software code and so this practical should be considered as general training to developing software as well as hardware.
+*Features:
+- Modular VHDL architecture
+- Finite State Machine (FSM) for traffic sequencing
+- Clock prescaler for real-time timing control
+- Input debouncing for stable signal handling
+- Testbench-based verification
+- On-board FPGA deployment and debugging
 
-I recommend commiting and pushing your work onto github regularly, at least at the end of every practical session but also every time you have completed one of the tasks.
+*System Architecture
 
-To do this:
+The design is split into reusable modules:
 
-Go to the "Source Control" panel in Visual Studio Code. Select the changed files you want to push from the changes list (I suggest selecting all) and the "Commit and Sync" Option. You must commit and push your final work for assessment - you will be assessed on your last commit before the coursework deadline.
+- Clock Prescaler – Reduces FPGA clock to usable timing intervals
+- Debouncer – Cleans asynchronous input signals
+- Counter – Controls timing durations for each state
+- FSM Controller – Governs traffic light transitions
 
-You may get formative feedback on individual commits or overall feedback in your repository on github.
+*State Machine
 
-Watch the video on how to edit files, build,program and debug using the Basys 3 FPGA board.
+The FSM controls the traffic light sequence:
+
+- Green → Yellow → Red
+- Deterministic timing ensures safe transitions
+- Designed using synchronous logic principles
+
+*Verification
+- Developed VHDL testbenches to validate:
+- Reset behaviour
+- State transitions
+- Timing correctness
+- Used waveform analysis (Vivado) to debug:
+- Logic errors
+- Timing behaviour
+
+*Hardware Implementation
+- Target Board: Basys 3 (Artix-7 FPGA)
+- Deployed design and verified behaviour on hardware
+- Debugged using:
+- LED outputs
+- Timing observation
+- Iterative refinement
+
+*Key Learnings
+Designing modular and reusable RTL components
+Understanding synchronous digital design principles
+Debugging using simulation + real hardware
+Bridging theoretical design → physical implementation
+
+*Future Improvements
+- Add pedestrian crossing logic
+- Introduce configurable timing parameters
+- Extend to multi-intersection system
+- Implement in SystemVerilog for advanced verification
