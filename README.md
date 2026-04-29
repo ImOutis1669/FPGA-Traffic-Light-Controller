@@ -1,4 +1,5 @@
 FPGA Traffic Light Controller (VHDL)
+
 *Overview
 
 This project implements a traffic light control system on an FPGA using VHDL.
