@@ -1,13 +1,13 @@
 FPGA Traffic Light Controller (VHDL)
 
-*Overview
+Overview
 
 This project implements a traffic light control system on an FPGA using VHDL.
 It demonstrates modular RTL design, finite state machines (FSMs), and hardware verification workflows.
 
 The system was designed, simulated, and deployed on a Basys 3 (Artix-7 FPGA).
 
-*Features:
+Features:
 - Modular VHDL architecture
 - Finite State Machine (FSM) for traffic sequencing
 - Clock prescaler for real-time timing control
@@ -15,7 +15,7 @@ The system was designed, simulated, and deployed on a Basys 3 (Artix-7 FPGA).
 - Testbench-based verification
 - On-board FPGA deployment and debugging
 
-*System Architecture
+System Architecture
 
 The design is split into reusable modules:
 
@@ -24,7 +24,7 @@ The design is split into reusable modules:
 - Counter – Controls timing durations for each state
 - FSM Controller – Governs traffic light transitions
 
-*State Machine
+State Machine
 
 The FSM controls the traffic light sequence:
 
@@ -32,7 +32,7 @@ The FSM controls the traffic light sequence:
 - Deterministic timing ensures safe transitions
 - Designed using synchronous logic principles
 
-*Verification
+Verification
 - Developed VHDL testbenches to validate:
 - Reset behaviour
 - State transitions
@@ -41,7 +41,7 @@ The FSM controls the traffic light sequence:
 - Logic errors
 - Timing behaviour
 
-*Hardware Implementation
+Hardware Implementation
 - Target Board: Basys 3 (Artix-7 FPGA)
 - Deployed design and verified behaviour on hardware
 - Debugged using:
@@ -49,13 +49,13 @@ The FSM controls the traffic light sequence:
 - Timing observation
 - Iterative refinement
 
-*Key Learnings
+Key Learnings
 Designing modular and reusable RTL components
 Understanding synchronous digital design principles
 Debugging using simulation + real hardware
 Bridging theoretical design → physical implementation
 
-*Future Improvements
+Future Improvements
 - Add pedestrian crossing logic
 - Introduce configurable timing parameters
 - Extend to multi-intersection system
